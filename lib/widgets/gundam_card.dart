@@ -49,7 +49,7 @@ class GundamCard extends StatelessWidget {
                           items.nama!,
                           style: txtPutih.copyWith(fontSize: 18),
                           maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                          //overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       SizedBox(height: 7),

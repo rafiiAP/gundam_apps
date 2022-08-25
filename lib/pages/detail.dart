@@ -20,10 +20,12 @@ class Detail extends StatelessWidget {
               fit: BoxFit.fill,
             ),
             ListView(
+              shrinkWrap: true,
               children: [
                 SizedBox(height: 450),
                 Container(
                   width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(15),
@@ -31,110 +33,74 @@ class Detail extends StatelessWidget {
                     color: abu2,
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(height: 30),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: edge),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 0),
-                                  child: Text(
-                                    item.nama!,
-                                    style: txtPutih.copyWith(fontSize: 22),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                                SizedBox(height: 2),
-                                Text.rich(
-                                  TextSpan(
-                                    text: 'by ',
-                                    style: txtHitam.copyWith(fontSize: 16),
-                                    children: [
-                                      TextSpan(
-                                        text: item.brand,
-                                        style: txtPutih.copyWith(fontSize: 16),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              flex: 6,
+                              child: Text(
+                                item.nama!,
+                                style: txtPutih.copyWith(fontSize: 20),
+                              )),
+                          Expanded(
+                            child: Row(
                               children: [
                                 Icon(
                                   Icons.star,
                                   color: Colors.yellow,
                                 ),
-                                Text(
-                                  '${item.rating}',
-                                  style: txtPutih,
-                                ),
+                                Text('${item.rating}',
+                                    style: txtPutih.copyWith(fontSize: 16)),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Padding(
-                        padding: EdgeInsets.only(left: edge),
-                        child: Text(
-                          'Description',
-                          style: regulerTxt.copyWith(
-                            fontSize: 16,
                           ),
-                        ),
+                        ],
                       ),
                       SizedBox(height: 10),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10, right: 5),
-                        child: Text(
-                          item.deskripsi!,
-                          style: txtPutih.copyWith(fontSize: 14),
-                        ),
+                      Row(
+                        children: [
+                          Text('by  ', style: txtHitam.copyWith(fontSize: 16)),
+                          Text(item.brand!,
+                              style: txtPutih.copyWith(fontSize: 16)),
+                        ],
                       ),
                       SizedBox(height: 20),
-                      Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: edge,
-                        ),
-                        height: 50,
-                        width: MediaQuery.of(context).size.width - (2 * edge),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text(
-                              '\$${item.harga}',
-                              style: txtPutih.copyWith(fontSize: 24),
-                            ),
-                            ElevatedButton(
-                              child: Text(
-                                'Buy Now',
-                                style: txtHitam.copyWith(fontSize: 18),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.yellow,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                              ),
-                              onPressed: () {
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(SnackBar(
-                                  content: Text("You pressed buy ;"),
-                                ));
-                              },
-                            ),
-                          ],
-                        ),
+                      Text(
+                        item.deskripsi!,
+                        style: txtPutih,
+                        textAlign: TextAlign.justify,
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('\$${item.harga}',
+                              style: txtPutih.copyWith(fontSize: 20)),
+                          ElevatedButton(
+                            child: Text(
+                              'Buy Now',
+                              style: txtHitam.copyWith(fontSize: 18),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.yellow,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                            onPressed: () {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(
+                                content: Text("You pressed buy ;"),
+                              ));
+                            },
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 40)
                     ],
                   ),
                 ),
