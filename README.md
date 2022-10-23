@@ -1,16 +1,17 @@
-# gundam_apps
+# Submission 1 Dicoding:  Belajar Membuat Aplikasi Flutter untuk Pemula
 
-A new Flutter project.
+Rating Review : ★★★★★ (5 Stars) 
+
+## Submission Criteria
+- There is a use of Stateless Widgets.
+- There is use of Stateful Widgets.
+- Have at least 2 (two) pages and implement Navigation.
+- Does not have an overflow display (can adjust the screen size).
+- Application themes that are submitted are free, but the more detailed and complete your application is, the higher the submission value.
+
+## Preview
+<img src="https://github.com/rafiiAP/gundam_apps/blob/master/images/preview/ss1.png" width="250"> <img src="https://github.com/rafiiAP/gundam_apps/blob/master/images/preview/ss2.png" width="250">
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Fork or Clone the Repository
+- Give a star if this repository useful
